@@ -5,10 +5,15 @@ import ExpenseFilter from "./ExpenseFilter";
 import { useState } from "react";
 
 export default function Expenses({ expenses }) {
-  const [filterYear, setFilterYear] = useState("2020");
+  const [filterYear, setFilterYear] = useState("2021");
   const filterChangeHandeler = (year) => {
     setFilterYear(year);
   };
+
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear() == filterYear;
+  });
+
   return (
     <div>
       <Card className="expenses">
@@ -16,7 +21,8 @@ export default function Expenses({ expenses }) {
           onChangefilter={filterChangeHandeler}
           selected={filterYear}
         />
-        {expenses.map((expense) => {
+        {filteredExpenses.length === 0 && <p>No expenses found!</p>}
+        {filteredExpenses.map((expense) => {
           return (
             <ExpenseItem
               key={expense.id}
