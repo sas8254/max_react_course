@@ -14,4 +14,4 @@ export default function NewExpenses(props) {
       <ExpenseForm onSaveExpenseData={saveEcpenseDataHandler} />
     </div>
   );
-}
+} 

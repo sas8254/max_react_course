@@ -22,3 +22,7 @@
   .new-expense__actions {
     text-align: right;
   }
+
+  .new-expense-btn{
+    text-align: center;
+  }

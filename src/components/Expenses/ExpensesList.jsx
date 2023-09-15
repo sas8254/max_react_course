@@ -9,12 +9,14 @@ export default function ExpansesList({ expenses }) {
     <ul className="expanses-list">
       {expenses.map((expense) => {
         return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
+          <li>
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          </li>
         );
       })}
     </ul>
